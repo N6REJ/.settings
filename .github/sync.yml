@@ -1,8 +1,34 @@
 group:
   # Common settings for N6REJ repos
+  # The changelog automation files are excluded here and delivered by the
+  # dedicated group below, so repos that do not publish releases can simply be
+  # left out of that group.
   - files:
       - source: .common
         dest: .github
+        exclude: |
+          workflows/changelog.yml
+          release.yml
+    repos: |
+        N6REJ/bears_aichatbot
+        N6REJ/Bears-ADA-Clock
+        N6REJ/joomla-packager
+        N6REJ/mod_bears_pricing_tables
+        N6REJ/mod_bearsclock
+        N6REJ/mod_bearsfaq
+        N6REJ/mod_bearslivesearch
+        N6REJ/mod_julianclock
+        N6REJ/Taskbar-Killer
+        N6REJ/winkill
+        N6REJ/repo-file-sync-action
+
+  # Changelog automation — only repos that publish releases.
+  # Every repo below has at least one release, so all 11 are included.
+  - files:
+      - source: .common/workflows/changelog.yml
+        dest: .github/workflows/changelog.yml
+      - source: .common/release.yml
+        dest: .github/release.yml
     repos: |
         N6REJ/bears_aichatbot
         N6REJ/Bears-ADA-Clock
