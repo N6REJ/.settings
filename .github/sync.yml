@@ -1,0 +1,17 @@
+group:
+  # Common settings for N6REJ repos
+  - files:
+      - source: .common
+        dest: .github
+    repos: |
+        N6REJ/bears_aichatbot
+        N6REJ/Bears-ADA-Clock
+        N6REJ/joomla-packager
+        N6REJ/mod_bears_pricing_tables
+        N6REJ/mod_bearsclock
+        N6REJ/mod_bearsfaq
+        N6REJ/mod_bearslivesearch
+        N6REJ/mod_julianclock
+        N6REJ/Taskbar-Killer
+        N6REJ/winkill
+        N6REJ/repo-file-sync-action
