@@ -21,6 +21,7 @@ group:
         N6REJ/Taskbar-Killer
         N6REJ/winkill
         N6REJ/repo-file-sync-action
+        N6REJ/curseforge-downloads-action
 
   # Changelog automation — only repos that publish releases.
   # Every repo below has at least one release, so all 11 are included.
@@ -41,3 +42,5 @@ group:
         N6REJ/Taskbar-Killer
         N6REJ/winkill
         N6REJ/repo-file-sync-action
+        N6REJ/curseforge-downloads-action
+
