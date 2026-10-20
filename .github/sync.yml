@@ -1,14 +1,40 @@
 group:
-  # Common settings for N6REJ repos
+  # ---------------------------------------------------------------
+  # Common community files for N6REJ repos.
+  #
+  # Files are listed explicitly (rather than syncing the whole .common
+  # directory) so that adding a file to .common does not silently push it
+  # to every repository. Add new entries here on purpose.
+  #
+  # Repository-owned files are intentionally NOT in this list and are
+  # therefore never overwritten, for example:
+  #   - ISSUE_TEMPLATE/config.yml  (each repo links its own security policy)
+  #
   # The changelog automation files are excluded here and delivered by the
-  # dedicated group below, so repos that do not publish releases can simply be
-  # left out of that group.
+  # dedicated group below, so repos that do not publish releases can simply
+  # be left out of that group.
+  # ---------------------------------------------------------------
   - files:
-      - source: .common
-        dest: .github
-        exclude: |
-          workflows/changelog.yml
-          release.yml
+      - source: .common/CODEOWNERS
+        dest: .github/CODEOWNERS
+      - source: .common/CODE_OF_CONDUCT.md
+        dest: .github/CODE_OF_CONDUCT.md
+      - source: .common/CONTRIBUTING.md
+        dest: .github/CONTRIBUTING.md
+      - source: .common/FUNDING.yml
+        dest: .github/FUNDING.yml
+      - source: .common/PULL_REQUEST_TEMPLATE.md
+        dest: .github/PULL_REQUEST_TEMPLATE.md
+      - source: .common/SECURITY.md
+        dest: .github/SECURITY.md
+      - source: .common/SUPPORT.md
+        dest: .github/SUPPORT.md
+      - source: .common/ISSUE_TEMPLATE/bug_report.md
+        dest: .github/ISSUE_TEMPLATE/bug_report.md
+      - source: .common/ISSUE_TEMPLATE/feature_request.md
+        dest: .github/ISSUE_TEMPLATE/feature_request.md
+      - source: .common/ISSUE_TEMPLATE/question.md
+        dest: .github/ISSUE_TEMPLATE/question.md
     repos: |
         N6REJ/bears_aichatbot
         N6REJ/Bears-ADA-Clock
@@ -24,7 +50,6 @@ group:
         N6REJ/curseforge-downloads-action
 
   # Changelog automation — only repos that publish releases.
-  # Every repo below has at least one release, so all 11 are included.
   - files:
       - source: .common/workflows/changelog.yml
         dest: .github/workflows/changelog.yml
@@ -43,4 +68,3 @@ group:
         N6REJ/winkill
         N6REJ/repo-file-sync-action
         N6REJ/curseforge-downloads-action
-
