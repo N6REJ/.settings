@@ -13,6 +13,9 @@ group:
   # The changelog automation files are excluded here and delivered by the
   # dedicated group below, so repos that do not publish releases can simply
   # be left out of that group.
+  #
+  # Archived repositories are intentionally omitted: they are read-only, so
+  # pushing to them fails with 403. N6REJ/bears_aichatbot is archived.
   # ---------------------------------------------------------------
   - files:
       - source: .common/CODEOWNERS
@@ -36,7 +39,6 @@ group:
       - source: .common/ISSUE_TEMPLATE/question.md
         dest: .github/ISSUE_TEMPLATE/question.md
     repos: |
-        N6REJ/bears_aichatbot
         N6REJ/Bears-ADA-Clock
         N6REJ/joomla-packager
         N6REJ/mod_bears_pricing_tables
@@ -56,7 +58,6 @@ group:
       - source: .common/release.yml
         dest: .github/release.yml
     repos: |
-        N6REJ/bears_aichatbot
         N6REJ/Bears-ADA-Clock
         N6REJ/joomla-packager
         N6REJ/mod_bears_pricing_tables
